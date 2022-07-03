@@ -1,0 +1,700 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Book Spot</title> 
+    <link rel="icon" href="logo.png">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+/*To enable smooth scrolling*/
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+/*Generally for text on the page*/
+body {
+ font-family: 'Roboto', sans-serif;
+ font-weight: 300;
+ background-color: #E6E5E6;
+}
+
+h1{
+ font-family: 'Abril Fatface', serif;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0px 0px 5px #293D5B, 0px 0px 10px #293D5B, 0px 0px 5px #293D5B,
+    0px 0px 10px #293D5B;
+}
+p{
+    font-size: medium;
+}
+/*Ends*/
+
+/*Navigation bar*/
+.logo-img{
+    float: left;
+    position: relative;
+    height:50px;
+    width:50px;
+}
+@keyframes rotate {
+  0% { transform: rotate(0);}
+  100% {transform: rotate(360deg);}
+}
+.logo-img:hover{
+
+  animation-name: rotate;
+  animation-duration: 1s;
+}
+
+ul 
+{
+  list-style-type: none;
+  overflow: hidden;
+  background-color: black ;
+  margin-block-start: 0em;
+margin-block-end: 0em;
+padding-top: 2px;
+}
+
+li {
+  float: left;
+}
+
+#navbar{
+top: 0;
+position: fixed; /* Set the navbar to fixed position */
+width: 100%; /* Full width */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:#E6E5E6;
+  color: black;
+}
+
+/*Navigation bar ends*/
+
+/*Introduction/cover page */
+#intro {
+padding-top: 5%;
+padding-bottom: 5%;
+padding-left: 2%;
+padding-right: 2%;
+}
+
+#intro > div > img {
+    height: 500px;
+    width: 500px;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #E6E5E6;
+}
+
+.flex-container > div {
+  margin: 10px;
+  padding: 0px;
+  font-size: 30px;
+  width: 50%;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #7F6075;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+/*Introduction page ends*/
+
+/*Recommendations  cards*/
+#recommend,#bestselling, #reviews{
+    padding-top: 4%;
+}
+
+.box{
+    padding-bottom:20px;
+}
+.box input{
+    width:50%;
+    height:30px;
+    border-radius: 30px;
+    padding-left: 10px;
+}
+
+/* Carousal code */
+.carousal{
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  position: relative;  
+  background-color: lightgrey;
+}
+.container{
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.container .main-card{
+  display: flex;
+  justify-content: space-evenly;
+  width: 200%;
+  transition: 2s;
+}
+#two:checked ~ .main-card{
+  margin-left: -100%;
+}
+.container .main-card .cards{
+  width: calc(100% / 2 - 10px);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  justify-content: space-between;
+}
+.main-card .cards .card .content >img{
+    width:100px;
+    height:120px;
+    
+}
+.main-card .cards .card .content{
+    text-align: center;
+}
+.main-card .cards .card{
+  width: calc(100% / 4 - 10px);
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  height: auto;
+}
+.main-card .cards .card:hover{
+  transform: translateY(-10px);
+}
+ .container .button1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.button1 label{
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  background: black;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.button1 label.active{ width: 40px;}
+#one:checked ~ .button1 .one{ width: 40px;}
+#one:checked ~ .button1 .two{ width: 15px;}
+#two:checked ~ .button1 .one{ width: 15px;}
+#two:checked ~ .button1 .two{ width: 40px;}
+input[type="radio"]{ display: none;}
+
+/*Recommendation cards ends*/
+
+/*Best selling cards*/
+.cards-big {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.cards-big >div {
+  margin: 5px;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  float: left;
+  width: 25%;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px; 
+}
+.cards-big > div:hover{
+    
+    transform: translateY(-15px);
+    transition: all 0.4s ease;
+}
+.cards-big > div img {
+  width: 160px;
+  height: 210px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 7px;
+}
+
+.focus {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #7F6075;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.focus:hover {background-color: #3e8e41}
+
+.focus:active {
+  background-color: #3e8e41;
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+.focus:focus{
+    background-color: #3e8e41;
+}
+.focus:focus:after{
+    content:"ed";
+    line-height: initial;
+}
+
+
+.desc{
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.badge {
+  background-color: rgb(17, 17, 105);
+  color: white; 
+  border-radius: 10px;
+}
+.parent {
+  overflow: hidden; 
+ 
+  position: relative; 
+}
+
+.ribbon {
+  margin: 0;
+  padding: 0;
+  background: rgb(17, 17, 105);
+  color:white;
+  padding:1em 0;
+  position: absolute;
+  top:0;
+  right:0;
+  transform: translateX(30%) translateY(0%) rotate(45deg);
+  transform-origin: top left;
+}
+.ribbon:before,
+.ribbon:after {
+  content: '';
+  position: absolute;
+  top:0;
+  margin: 0 -1px;
+  width: 100%;
+  height: 100%;
+  background: rgb(17, 17, 105);
+}
+.ribbon:before {
+  right:100%;
+}
+
+.summary{
+    padding-bottom: 15%;
+}
+.price{
+    background-color: black;
+    color:white;
+    width:100%;
+    padding:5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*Best selling cards end*/
+
+/*Reviews cards*/
+.rev {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px; 
+    background: lightgray; 
+    justify-content: center;
+}
+.rev > div {
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 25%;
+  background-color: white;
+  border-radius: 10px;
+}
+.rev > div > img {
+    width: 160px;
+    height: 210px;
+    padding-top: 10px;
+}
+
+.speech{
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+form {
+        background-color: white;
+        max-width: 100%;
+        padding:10px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        margin-top: 20px;
+    }
+form input{
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding:10px;
+}
+.r1{
+    align-self: center;
+    text-align: center;
+}
+    
+/*Review Cards end*/
+
+
+
+/*Footer*/
+#footer {
+    display: flex;
+    flex-wrap: nowrap; 
+    margin-top: 4%;
+    background-color: black;
+    color: white;
+    padding-left: 0%;
+}
+
+#footer > div {
+    width: 30%;
+}
+.flex-container2 {
+  display: flex;
+}
+
+.flex-container2 > div {
+  margin:5%;
+  padding: 0px;
+}
+.flex-container2 a{
+    color:white;
+    text-decoration: none;
+    padding-bottom: 3px;
+    font-size: 18px;
+}
+.flex-container2 a:hover{
+    font-weight:700;
+}
+.go_to_top{
+    height:50%;
+    width: 50%;
+    background-color: #666;
+    border-radius: 20px;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+/*Footer ends*/
+
+
+#recommend, #reviews, #bestselling{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+*{ 
+  box-sizing: border-box;  
+}
+
+
+</style> 
+</head>
+
+
+<body>    
+
+<div id="navbar">
+    <ul>
+        <img src="logo.png" class="logo-img" >
+        <li><a href="#intro">Home</a></li>
+        <li><a href="#bestselling">Best Selling</a></li>
+        <li><a href="#recommend">Recommendations</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+    </ul>
+</div>
+
+
+<div id="intro" class="flex-container">
+    <div>
+        <h5 style="color:#7F6075 ; font-family: cursive;">The Book Spot</h5>
+        <h1>Gateway to a thousand worlds</h1>
+        <p>Books are no more threatened by a kindle than stairs by an elevator. Come explore our wide selection of books and fall in love with reading again.</p>
+        <a href="#bestselling"><button class="button">Best Selling Books</button></a>
+    </div>
+    <div>
+        <img src="BookFinal.jpg" alt="Books">
+    </div> 
+</div>
+
+
+<div id="bestselling">
+    <h2>Best Selling Books</h2>
+    <p>The best selling books of each genre during the year 2022.</p>
+
+<div class="cards-big">
+    <div class="parent">
+        <h4 class="ribbon">Fiction</h4>  
+        <img src="book1.jpg" alt="Charlie and the chocolate factory">
+        <button class="focus">+Add</button>
+        <div class="desc">Charlie and the chocolate factory</div>
+        <div class="badge">10% off on deal</div>
+        <div class="summary">The story features the adventures of young Charlie Bucket inside the chocolate factory of eccentric chocolatier Willy Wonka.</div>
+        <div class="price">Rs. 200</div>        
+    </div>
+    
+    <div class="parent">
+        <h4 class="ribbon">Fiction</h4>
+        <img src="book2.jpg" alt="Harry Potter and the Prisoner of Askaban">
+        <button class="focus">+Add</button>
+        <div class="desc">Prisoner of Askaban</div>
+        <div class="badge">21% off on deal</div>
+        <div class="summary">It is a fantasy novel written by British author J. K. Rowling and is the 3rd in the Harry Potter series.</div>
+        <div class="price">Rs. 350</div>
+            
+    </div>
+
+    <div class="parent">
+        <h4 class="ribbon">Non Fiction</h4>
+        <img src="book3.jpg" alt="Engineering Drawing by N D Bhatt">
+        <button class="focus">+Add</button>
+        <div class="desc">Engineering Drawing by N D Bhatt</div>        
+        <div class="badge">13% off on deal</div>
+        <div class="summary">Engineering Drawing by N D Bhatt provides a detailed study on the two salient topics: plane and solid geometry. </div>
+        <div class="price">Rs. 400</div>
+    </div>
+
+    <div class="parent">
+        <h4 class="ribbon">Fiction</h4>
+        <img src="book7.jpg" alt="The Da Vinci Code">
+        <button class="focus">+Add</button>
+        <div class="desc">The Da Vinci Code</div>        
+        <div class="badge">10% off on deal</div>
+        <div class="summary">The Da Vinci Code is a 2003 mystery thriller novel by Dan Brown. It is Brown's second novel to include the character Robert Langdon. </div>
+        <div class="price">Rs. 650</div>
+    </div>
+      
+</div>
+    
+      
+
+
+<div id="recommend">
+    <h2>Our Recommendations</h2>
+    <p>Similar books based on your past search history</p>
+
+    <div class="box">
+	<input type="text" name="" placeholder="Search...">
+    <i class="fa fa-search" aria-hidden="true" style="padding-bottom: 2%;"></i>
+    </div>
+ 
+
+<div class="carousal">
+    <div class="container">
+      <input type="radio" name="dot" id="one">
+      <input type="radio" name="dot" id="two">
+      <div class="main-card">
+        <div class="cards">
+          <div class="card">
+           <div class="content">
+              <img src="book1.jpg" alt="Charlie and the chocolate factory">
+              <div class="desc">Charlie and the chocolate factory</div>
+              <button class="focus">+Add</button>
+              <div class="badge">10% off on deal</div>
+              <div>Price: Rs. 200</div>    
+           </div>
+          </div>
+          <div class="card">
+            <div class="content">
+               <img src="book4.jpg" alt="Percy Jackson and the Lightening theif">
+               <div class="desc">Percy Jackson and the Lightening theif</div>
+               <button class="focus">+Add</button>
+               <div class="badge">10% off on deal</div>
+               <div>Price: Rs. 450</div>    
+            </div>
+           </div>
+          <div class="card">
+           <div class="content">          
+            <img src="book2.jpg">
+            <div class="desc">Harry Potter and the Prisoner of Askaban</div>
+            <button class="focus">+Add</button>
+            <div class="badge">21% off on deal</div>
+            <div>Price: Rs. 350</div>
+           </div>
+          </div>
+          <div class="card">
+           <div class="content">
+            <img src="book3.jpg">
+            <div class="desc">Engineering Drawing by N D Bhatt</div>
+            <button class="focus">+Add</button>
+            <div class="badge">13% off on deal</div>
+            <div>Price: Rs. 400</div>
+           </div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card">
+           <div class="content">
+            <img src="book7.jpg">
+            <div class="desc">Dan Brown: The Da Vinci Code</div>
+            <button class="focus">+Add</button>
+            <div class="badge">10% off on deal</div>
+            <div>Price: Rs. 650</div>
+           </div>
+          </div>
+          <div class="card">
+           <div class="content">
+            <img src="book5.jpg" alt="Rick Riordan: Magnus Chase">
+            <div class="desc">Rick Riordan: Magnus Chase </div>
+            <button class="focus">+Add</button>
+            <div class="badge">13% off on deal</div>
+            <div>Price: Rs. 400</div>
+           </div>
+          </div>
+          <div class="card">
+            <div class="content">
+               <img src="book1.jpg" alt="Charlie and the chocolate factory">
+               <div class="desc">Charlie and the chocolate factory</div>
+               <button class="focus">+Add</button>
+               <div class="badge">10% off on deal</div>
+               <div>Price: Rs. 200</div>
+            </div>
+           </div>
+          <div class="card">
+           <div class="content">
+            <img src="book6.jpg" alt="The hunger games trilogy">
+            <div class="desc">The Hunger Games trilogy</div>
+            <button class="focus">+Add</button>
+            <div class="badge">13% off on deal</div>
+            <div>Price: Rs. 400</div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <div class="button1">
+        <label for="one" class=" active one"></label>
+        <label for="two" class="two"></label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="reviews"> 
+    <h2>Reviews</h2>
+
+    <div class="rev">
+        <div>
+            <img src="person1.jpg">
+            <div class="desc">Andrzej Person</div>
+            <div class="speech">"The books arrived in perfect condition and I even got a free bookmarks with it."</div>
+        </div>
+
+        <div>
+            <img src="person2.jpg">
+            <div class="desc">Sandra Thomas</div>
+            <div class="speech">"Amazing customer service. Definitely purchasing from here again"</div>
+        </div>
+
+        <div>
+            <img src="person3.jpg">
+            <div class="desc">Mark Benedict</div>
+            <div class="speech">"Best prices which cannot compete with any other store. I bought my entire college bookset from here."</div>
+        </div>
+    </div>
+
+
+    <h3>Please leave us a review: </h3>
+    <div class="flex-container">
+        <div>
+    <form>
+        <label for="fname">Name: </label><br>
+        <input type="text" style="width: 90%" id="fname" name="fname" placeholder="Your name..."><br>
+        <label for="email">Email: </label><br>
+        <input type="text" style="width: 90%" id="email" name="email" placeholder="Email id..."><br>
+        <label for="review">Review: </label><br>
+        <textarea id="w3review" name="w3review" rows="10" cols="40" placeholder="Write your thoughts..."></textarea>
+        <br>
+        <button class="button">Submit</button>
+    </form>
+    </div>
+    <div class="r1"><h5>" Thank you for being a loyal customer. Please help us improve our services by leaving a review. Your feedback is valuable to us. "</h5></div>
+    </div>
+
+</div>
+
+
+<div id="footer" class="flex-container2">
+    
+    <div class="links">
+        <a href="https://www.google.com/">Terms and Conditions</a><br/><br/>
+        <a href="https://www.google.com/">Privacy Policy</a><br/><br/>
+        <a href="https://www.google.com/">Copyright Information</a>
+    </div>
+   
+    <div class="icon">
+    Follow us on:<br/><br/>
+    <a href="https://twitter.com">
+    <img src="twitter.png" alt="Twitter" style="height:40px;width:40px"></a>
+    <a href="https://www.facebook.com">
+    <img src="facebook.png" alt="Facebook" style="height:40px;width:40px"></a>
+    <a href="https://www.instagram.com">
+    <img src="instagram.png" alt="Instagram" style="height:40px;width:40px"></a>
+    <a href="https://www.linkedin.com">
+    <img src="linkedin.png" alt="Linkedin" style="height:40px;width:40px"></a>
+    </div>
+
+    <div><a href="#intro"><button class="go_to_top" >Back to top</button></a></div>
+</div>
+
+
+</body>
+</html>
